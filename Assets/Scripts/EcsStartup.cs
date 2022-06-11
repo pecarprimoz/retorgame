@@ -43,7 +43,8 @@ sealed class EcsStartup : MonoBehaviour {
         fixedUpdateSystems = new EcsSystems (ecsWorld, gameData)
             .Add (new CameraSyncSystem ())
             .Add (new PlayerMoveSystem ())
-            .Add (new SyncTransformSystem());
+            .Add (new SyncTransformSystem())
+            .Add (new WeaponUpdateSystem ());
 
         fixedUpdateSystems.Init ();
     }
