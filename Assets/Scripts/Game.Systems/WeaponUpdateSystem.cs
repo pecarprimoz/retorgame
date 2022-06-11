@@ -26,6 +26,7 @@ namespace Game.Systems {
                 
                 
                 PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent);
+                TryShooting ();
             }
         }
 
@@ -35,7 +36,11 @@ namespace Game.Systems {
             float angle = Mathf.Atan2 (directon.y, directon.x) * Mathf.Rad2Deg;
             weapon.trs.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
         }
-        
-        
+
+        private void TryShooting () {
+            
+        }
+
+
     }
 }

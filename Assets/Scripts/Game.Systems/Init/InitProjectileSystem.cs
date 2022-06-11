@@ -8,31 +8,28 @@ using UnityEngine;
 namespace Game.Systems.Init {
     public class InitProjectileSystem : IEcsInitSystem {
 
-        private Dictionary<int, GameObject> projectileEntityDict = new Dictionary<int, GameObject> ();
-
+        private const int projectileCount = 100;
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();
             
+            // create projectiles
+            for (int i = 0; i < projectileCount; i++) {
+                var projectileEntity = ecsWorld.NewEntity();
+                var projectile = Object.Instantiate (gameData.gameSystem.playerConfig.weaponConfiguration
+                    .projectileConfiguration.projectileReference);
+                var projectilePool = ecsWorld.GetPool<ProjectileComponent> ();
+                projectilePool.Add (projectileEntity);
+
+                ref var projectileComponent = ref projectilePool.Get (projectileEntity);
+                projectileComponent.body = projectile.GetComponent<Rigidbody2D> ();
+                projectileComponent.trs = projectile.transform;
+                projectileComponent.trs.gameObject.SetActive (false);
+            }
             
             foreach (var player in systems.GetWorld ().Filter<PlayerComponent> ().End ()) {
                 var weaponPool = ecsWorld.GetPool<WeaponComponent> ();
                 weaponPool.Add (player);
-                var weapon = Object.Instantiate (gameData.gameSystem.playerConfig.weaponConfiguration.weaponReference);
-                ref var weaponComponent = ref weaponPool.Get(player);
-                weaponComponent.trs = weapon.transform;
-                
-                var syncEntity = ecsWorld.NewEntity();
-                var syncTRSPool = ecsWorld.GetPool<SyncTransformComponent> ();
-                syncTRSPool.Add (syncEntity);
-                
-                var playerPool = ecsWorld.GetPool<PlayerComponent> ();
-                ref var playerComponent = ref playerPool.Get(player);
-
-                ref var syncTRS = ref syncTRSPool.Get(syncEntity);
-                syncTRS.attach = playerComponent.trs;
-                syncTRS.origin = weaponComponent.trs;
-                syncTRS.offset = gameData.gameSystem.playerConfig.weaponConfiguration.offset;
             }
             
             
