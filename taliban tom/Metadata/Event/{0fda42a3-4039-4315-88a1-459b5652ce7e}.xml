@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0fda42a3-4039-4315-88a1-459b5652ce7e}">
 		<property name="name">
-			<value>New Event</value>
+			<value>arifact</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -34,6 +34,9 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{b365c503-992d-4a2b-b832-fa0a62bd7c81}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{0032d897-f04b-44c1-bfca-87ea7e2680e4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{6abcddd8-e311-42a6-880d-dc0f933030d2}">
