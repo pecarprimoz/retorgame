@@ -16,4 +16,4 @@ MonoBehaviour:
   weaponReference: {fileID: 4171889878762353687, guid: 8c3074e1f50a8ee4c9996492c0fd0160, type: 3}
   projectileConfiguration: {fileID: 11400000, guid: 3afff5ee7385b46419ed6224933a24e0, type: 2}
   fireRate: 15
-  offset: {x: 0.24, y: -0.18, z: 0}
+  offset: {x: 0, y: 0, z: 0}
