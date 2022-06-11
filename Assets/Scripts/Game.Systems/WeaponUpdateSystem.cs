@@ -23,6 +23,8 @@ namespace Game.Systems {
                 ref var crosshairComponent = ref crosshairPool.Get (playerEntity);
                 ref var weaponComponent = ref weaponPool.Get (playerEntity);
 
+                
+                
                 PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent);
             }
         }
@@ -33,5 +35,7 @@ namespace Game.Systems {
             float angle = Mathf.Atan2 (directon.y, directon.x) * Mathf.Rad2Deg;
             weapon.trs.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
         }
+        
+        
     }
 }
