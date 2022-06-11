@@ -34,7 +34,10 @@ namespace Game.Systems.Init {
             ref var crosshairComponent = ref crosshairPool.Get(playerEntity);
             crosshairComponent.trs = crosshair.transform;
             
-         
+            var spriteDirectionPool = ecsWorld.GetPool<SpriteDirectionComponent> ();
+            spriteDirectionPool.Add (playerEntity);
+            ref var dirPlayerComp = ref spriteDirectionPool.Get (playerEntity);
+            dirPlayerComp.spriteTRS = player.transform;
         }
     }
 }

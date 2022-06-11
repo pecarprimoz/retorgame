@@ -22,11 +22,16 @@ namespace Game.Systems {
                 ref var playerInputComponent = ref playerInputPool.Get (playerEntity);
                 ref var crosshairComponent = ref crosshairPool.Get (playerEntity);
                 ref var weaponComponent = ref weaponPool.Get (playerEntity);
+                if (!weaponComponent.canShoot) {
+                    weaponComponent.delayBetweenShots -= Time.deltaTime;
+                }
 
-                
-                
+                if (weaponComponent.delayBetweenShots <= 0) {
+                    weaponComponent.delayBetweenShots = gameData.gameSystem.playerConfig.weaponConfiguration.fireRate;
+                    weaponComponent.canShoot = true;
+                }
+
                 PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent, ref playerInputComponent);
-                TryShooting ();
             }
         }
 
@@ -37,11 +42,6 @@ namespace Game.Systems {
             float angle = Mathf.Atan2 (directon.y, directon.x) * Mathf.Rad2Deg;
             weapon.trs.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
         }
-
-        private void TryShooting () {
-            
-        }
-
 
     }
 }

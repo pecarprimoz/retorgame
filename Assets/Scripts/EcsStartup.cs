@@ -46,7 +46,8 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerMoveSystem ())
             .Add (new SyncTransformSystem())
             .Add (new WeaponUpdateSystem ())
-            .Add (new ProjectileSystem ());
+            .Add (new ProjectileSystem ())
+            .Add (new SpriteDirectionSystem ());
 
         fixedUpdateSystems.Init ();
     }

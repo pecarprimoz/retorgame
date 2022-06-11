@@ -27,8 +27,7 @@ namespace Game.Systems {
                  *    vector.x  -1    1
                  */
                 if (playerInputComponent.IsMoving) {
-                    playerComponent.body.AddForce (playerInputComponent.movementDirection * playerComponent.speed,
-                        ForceMode2D.Force);
+                    playerComponent.body.velocity = (Vector2)playerInputComponent.movementDirection * playerComponent.speed;
                 }
                 else {
                     playerComponent.body.velocity = Vector2.zero;

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Game.Systems.Init {
     public class InitProjectileSystem : IEcsInitSystem {
 
-        private const int projectileCount = 3000;
+        private const int projectileCount = 9999;
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();
@@ -32,12 +32,6 @@ namespace Game.Systems.Init {
                     .projectileConfiguration.damage;
                 projectileComponent.trs.gameObject.SetActive (false);
             }
-            //
-            // foreach (var player in systems.GetWorld ().Filter<PlayerComponent> ().End ()) {
-            //     var weaponPool = ecsWorld.GetPool<WeaponComponent> ();
-            //     weaponPool.Add (player);
-            // }
-            
             
         }
     }

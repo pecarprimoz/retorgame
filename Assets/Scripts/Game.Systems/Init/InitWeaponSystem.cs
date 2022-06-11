@@ -11,6 +11,7 @@ namespace Game.Systems.Init {
             var gameData = systems.GetShared<GameData>();
             // add new player entity to player pool
             foreach (var player in systems.GetWorld ().Filter<PlayerComponent> ().End ()) {
+                var weaponEntity = ecsWorld.NewEntity ();
                 var weaponPool = ecsWorld.GetPool<WeaponComponent> ();
                 weaponPool.Add (player);
                 var weapon = Object.Instantiate (gameData.gameSystem.playerConfig.weaponConfiguration.weaponReference);
@@ -28,6 +29,12 @@ namespace Game.Systems.Init {
                 syncTRS.attach = playerComponent.trs;
                 syncTRS.origin = weaponComponent.trs;
                 syncTRS.offset = gameData.gameSystem.playerConfig.weaponConfiguration.offset;
+                
+                var spriteDirectionPool = ecsWorld.GetPool<SpriteDirectionComponent> ();
+
+                spriteDirectionPool.Add (weaponEntity);
+                ref var dirWepComp = ref spriteDirectionPool.Get (weaponEntity);
+                dirWepComp.spriteTRS = weapon.transform;
             }
             
             
