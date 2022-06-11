@@ -7,6 +7,7 @@ namespace Game.ScriptableObjects {
     public class PlayerConfiguration : ScriptableObject {
         public GameObject playerReference;
         public GameObject playerCrosshairReference;
+        public WeaponConfiguration weaponConfiguration;
         public float playerSpeed;
     }
 }

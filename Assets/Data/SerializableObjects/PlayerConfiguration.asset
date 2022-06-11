@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerReference: {fileID: 2236612293880467300, guid: 574f9e53a00f9414893f077455db573d, type: 3}
   playerCrosshairReference: {fileID: 2156197272780719076, guid: c17c2a49dbfe0ab48a529d95006586e6, type: 3}
+  weaponConfiguration: {fileID: 11400000, guid: f00bbf056f1c4e549a62de2d0be74b4d, type: 2}
   playerSpeed: 1

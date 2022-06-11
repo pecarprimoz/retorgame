@@ -18,9 +18,6 @@ namespace Game.Systems.Init {
             var playerInputPool = ecsWorld.GetPool<PlayerInputComponent>();
             playerInputPool.Add(playerEntity);
             
-            var crosshairPool = ecsWorld.GetPool<CrosshairComponent> ();
-            crosshairPool.Add (playerEntity);
-            
             ref var playerComponent = ref playerPool.Get(playerEntity);
             // upgrade this to a catalog based system down the road, its bad config also has references to assets
             // you could do this in a separate catalog entry that just holds and ID, link that ID to config, then access
@@ -29,11 +26,15 @@ namespace Game.Systems.Init {
             playerComponent.trs = player.transform;
             playerComponent.speed = gameData.gameSystem.playerConfig.playerSpeed;
             playerComponent.body = player.GetComponent<Rigidbody2D> ();
-
+            
+            // crosshair here because we are tied to the player entity due to input, decouple TODO
+            var crosshairPool = ecsWorld.GetPool<CrosshairComponent> ();
+            crosshairPool.Add (playerEntity);
             var crosshair = Object.Instantiate (gameData.gameSystem.playerConfig.playerCrosshairReference);
             ref var crosshairComponent = ref crosshairPool.Get(playerEntity);
             crosshairComponent.trs = crosshair.transform;
             
+         
         }
     }
 }

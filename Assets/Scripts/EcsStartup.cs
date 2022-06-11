@@ -22,12 +22,13 @@ sealed class EcsStartup : MonoBehaviour {
         {
             gameSystem = gameConfig,
             sceneService = new SceneService (),
-            runetimeData = new RuntimeData ()
+            runetimeData = new RuntimeData (),
         };
 
         initSystems = new EcsSystems (ecsWorld, gameData)
             .Add (new InitGameSystem ())
-            .Add (new InitPlayerSystem ());
+            .Add (new InitPlayerSystem ())
+            .Add (new InitWeaponSystem ());
 
         initSystems.Init ();
 
@@ -41,7 +42,8 @@ sealed class EcsStartup : MonoBehaviour {
 
         fixedUpdateSystems = new EcsSystems (ecsWorld, gameData)
             .Add (new CameraSyncSystem ())
-            .Add (new PlayerMoveSystem ());
+            .Add (new PlayerMoveSystem ())
+            .Add (new SyncTransformSystem());
 
         fixedUpdateSystems.Init ();
     }

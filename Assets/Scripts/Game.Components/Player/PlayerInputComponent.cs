@@ -7,6 +7,8 @@ namespace Game.Components.Player {
         public Vector3 mousePos;
         public Vector3 direction;
 
+        public bool mouse0;
+
         public bool IsMoving => direction.x != 0 || direction.y != 0;
     }
 }

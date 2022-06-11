@@ -4,6 +4,7 @@ using Game.Components.Player;
 using UnityEngine;
 
 namespace Game.Systems {
+    // this is kinda the same as sync trs
     public class CameraSyncSystem : IEcsRunSystem {
         public void Run(EcsSystems ecsSystems) {
             var filterCamera = ecsSystems.GetWorld ().Filter<CameraComponent> ().End ();
