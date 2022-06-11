@@ -31,9 +31,9 @@ namespace Game.Systems {
                         ForceMode2D.Force);
                 }
                 else {
-                    // playerComponent.body.velocity = Vector2.zero;
-                    // playerComponent.body.angularVelocity = 0;
-                    // playerComponent.body.Sleep();
+                    playerComponent.body.velocity = Vector2.zero;
+                    playerComponent.body.angularVelocity = 0;
+                    playerComponent.body.Sleep();
                 }
 
                 // handle crosshair logic&view
