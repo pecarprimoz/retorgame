@@ -8,7 +8,8 @@ namespace Game.ScriptableObjects {
         public int id;
         public GameObject projectileReference;
         public AnimationCurve curve;
-        public float projectileSpeed;
-        public float projectileDamage;
+        public float speed;
+        public float damage;
+        public float lifetime;
     }
 }

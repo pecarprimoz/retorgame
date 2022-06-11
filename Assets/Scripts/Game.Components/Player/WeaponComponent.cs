@@ -5,5 +5,6 @@ namespace Game.Components.Player {
         public int id;
         public Transform trs;
         public float fireRate;
+        public Vector3 offset;
     }
 }
