@@ -36,18 +36,19 @@ sealed class EcsStartup : MonoBehaviour {
         updateSystems = new EcsSystems (ecsWorld, gameData)
             .Add (new PlayerInputSystem ())
             .Add (new PlayerAnimationSystem ())
+            .Add (new CameraSyncSystem ())
+            .Add (new SyncTransformSystem())
+            .Add (new WeaponUpdateSystem ())
+            .Add (new ProjectileSystem ())
+            .Add (new SpriteDirectionSystem ())
+
 #if UNITY_EDITOR
             .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ());
 #endif
         updateSystems.Init ();
 
         fixedUpdateSystems = new EcsSystems (ecsWorld, gameData)
-            .Add (new CameraSyncSystem ())
-            .Add (new PlayerMoveSystem ())
-            .Add (new SyncTransformSystem())
-            .Add (new WeaponUpdateSystem ())
-            .Add (new ProjectileSystem ())
-            .Add (new SpriteDirectionSystem ());
+            .Add (new PlayerMoveSystem ());
 
         fixedUpdateSystems.Init ();
     }
