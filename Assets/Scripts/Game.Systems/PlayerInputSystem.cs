@@ -23,7 +23,7 @@ namespace Game.Systems
                 playerInputComponent.mouse0 = Input.GetMouseButton (0);
                 var playerDirection =
                     new Vector2 (playerInputComponent.moveHorizontal.x, playerInputComponent.moveVertical.x);
-                playerInputComponent.direction = playerDirection;
+                playerInputComponent.movementDirection = playerDirection;
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     gameData.sceneService.ReloadScene();

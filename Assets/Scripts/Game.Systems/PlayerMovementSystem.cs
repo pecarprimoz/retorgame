@@ -27,7 +27,7 @@ namespace Game.Systems {
                  *    vector.x  -1    1
                  */
                 if (playerInputComponent.IsMoving) {
-                    playerComponent.body.AddForce (playerInputComponent.direction * playerComponent.speed,
+                    playerComponent.body.AddForce (playerInputComponent.movementDirection * playerComponent.speed,
                         ForceMode2D.Force);
                 }
                 else {

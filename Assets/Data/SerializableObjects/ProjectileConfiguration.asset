@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda5661c33e8fe84a8930ecb74a03edc, type: 3}
   m_Name: ProjectileConfiguration
   m_EditorClassIdentifier: 
+  id: 0
   projectileReference: {fileID: 6089607857566856458, guid: 3f63f5b896150a94e95ac29249c69ef0, type: 3}
   curve:
     serializedVersion: 2
@@ -37,5 +38,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  projectileSpeed: 5
-  projectileDamage: 5
+  speed: 50
+  damage: 15
+  lifetime: 5

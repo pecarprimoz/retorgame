@@ -7,5 +7,8 @@ namespace Game.Components.Player {
         public Rigidbody2D body;
         public AnimationCurve projectileCurve;
         public Vector3 direction;
+        public float damage;
+        public float speed;
+        public float lifetime;
     }
 }

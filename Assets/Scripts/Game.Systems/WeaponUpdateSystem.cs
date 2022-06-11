@@ -25,14 +25,15 @@ namespace Game.Systems {
 
                 
                 
-                PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent);
+                PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent, ref playerInputComponent);
                 TryShooting ();
             }
         }
 
-        private void PointWeaponToCrosshair(ref WeaponComponent weapon, ref CrosshairComponent component) {
-            var directon = (component.trs.position - weapon.trs.position).normalized;
-            weapon.trs.position = Vector3.MoveTowards (weapon.trs.position, component.trs.position, Time.deltaTime);
+        private void PointWeaponToCrosshair(ref WeaponComponent weapon, ref CrosshairComponent crosshair, ref PlayerInputComponent input) {
+            var directon = (crosshair.trs.position - weapon.trs.position).normalized;
+            input.lookDirection = directon;
+            weapon.trs.position = Vector3.MoveTowards (weapon.trs.position, crosshair.trs.position, Time.deltaTime);
             float angle = Mathf.Atan2 (directon.y, directon.x) * Mathf.Rad2Deg;
             weapon.trs.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
         }

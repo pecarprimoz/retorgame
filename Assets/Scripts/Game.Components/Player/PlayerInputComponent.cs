@@ -5,10 +5,11 @@ namespace Game.Components.Player {
         public Vector3 moveVertical;
         public Vector3 moveHorizontal;
         public Vector3 mousePos;
-        public Vector3 direction;
+        public Vector3 movementDirection;
+        public Vector3 lookDirection;
 
         public bool mouse0;
 
-        public bool IsMoving => direction.x != 0 || direction.y != 0;
+        public bool IsMoving => movementDirection.x != 0 || movementDirection.y != 0;
     }
 }
