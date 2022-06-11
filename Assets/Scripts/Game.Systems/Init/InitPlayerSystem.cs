@@ -29,14 +29,11 @@ namespace Game.Systems.Init {
             playerComponent.trs = player.transform;
             playerComponent.speed = gameData.gameSystem.playerConfig.playerSpeed;
             playerComponent.body = player.GetComponent<Rigidbody2D> ();
-            
-            var uiPool = ecsWorld.GetPool<UiComponent> ();
+
+            var crosshair = Object.Instantiate (gameData.gameSystem.playerConfig.playerCrosshairReference);
             ref var crosshairComponent = ref crosshairPool.Get(playerEntity);
-            // second way to do it, is it bad ? i like it
-            foreach (var _ in systems.GetWorld ().Filter<UiComponent> ().End ()) {
-                ref var ui = ref uiPool.Get(_);
-                crosshairComponent.trs = ui.UI.GetComponent<UiWorldView> ().crosshair.transform;
-            }
+            crosshairComponent.trs = crosshair.transform;
+            
         }
     }
 }

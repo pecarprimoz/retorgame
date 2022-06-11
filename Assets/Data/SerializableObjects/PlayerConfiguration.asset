@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerConfiguration
   m_EditorClassIdentifier: 
   playerReference: {fileID: 2236612293880467300, guid: 574f9e53a00f9414893f077455db573d, type: 3}
-  playerSpeed: 5
+  playerCrosshairReference: {fileID: 2156197272780719076, guid: c17c2a49dbfe0ab48a529d95006586e6, type: 3}
+  playerSpeed: 1

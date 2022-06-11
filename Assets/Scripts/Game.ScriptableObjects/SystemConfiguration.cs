@@ -7,5 +7,6 @@ namespace Game.ScriptableObjects {
     public class SystemConfiguration : ScriptableObject {
         public GameConfiguration gameConfig;
         public PlayerConfiguration playerConfig;
+        public CanvasConfiguration canvasConfig;
     }
 }

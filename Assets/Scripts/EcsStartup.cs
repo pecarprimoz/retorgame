@@ -15,20 +15,18 @@ sealed class EcsStartup : MonoBehaviour {
 
     [Header ("SO References")] [SerializeField]
     private SystemConfiguration gameConfig;
-    [SerializeField]
-    private CanvasConfiguration uiConfig;
 
     void Start () {
         ecsWorld = new EcsWorld ();
         var gameData = new GameData
         {
             gameSystem = gameConfig,
-            UI =  uiConfig,
             sceneService = new SceneService (),
+            runetimeData = new RuntimeData ()
         };
 
         initSystems = new EcsSystems (ecsWorld, gameData)
-            .Add (new InitCameraSystem ())
+            .Add (new InitGameSystem ())
             .Add (new InitPlayerSystem ());
 
         initSystems.Init ();
@@ -42,8 +40,8 @@ sealed class EcsStartup : MonoBehaviour {
         updateSystems.Init ();
 
         fixedUpdateSystems = new EcsSystems (ecsWorld, gameData)
-            .Add (new PlayerMoveSystem ())
-            .Add (new CameraSyncSystem ());
+            .Add (new CameraSyncSystem ())
+            .Add (new PlayerMoveSystem ());
 
         fixedUpdateSystems.Init ();
     }

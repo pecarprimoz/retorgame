@@ -16,8 +16,12 @@ namespace Game.Systems {
                 foreach (var playerEntity in filterPlayer) {
                     ref var playerComponent = ref playerPool.Get (playerEntity);
                     var playerPosition = playerComponent.trs.position;
-                    camComponent.camera.transform.position = new Vector3(playerPosition.x, playerPosition.y,
+                    var playerInWorldPosition = new Vector3 (playerPosition.x, playerPosition.y,
                         camComponent.camera.transform.position.z);
+                    camComponent.camera.transform.position = playerInWorldPosition;
+                    camComponent.offset = playerComponent.trs.position -
+                                          camComponent.camera.transform
+                                              .position;
                 }
             }
         }
