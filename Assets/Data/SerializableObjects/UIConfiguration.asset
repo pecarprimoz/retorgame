@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc50f6f5da321f46b2d6019949c7055, type: 3}
-  m_Name: GameConfiguration
+  m_Script: {fileID: 11500000, guid: 2542a7cc57fe4abfb443323585521db6, type: 3}
+  m_Name: UIConfiguration
   m_EditorClassIdentifier: 
-  uiConfig: {fileID: 11400000, guid: 456031b1799ffbd41bf6b2e09569ba57, type: 2}
-  playerConfig: {fileID: 11400000, guid: f613552a12988d14c9f60ecc30712800, type: 2}
+  cameraConfiguration: {fileID: 11400000, guid: ebd7c55310d8932458f151590d05ce26, type: 2}
+  canvasConfiguration: {fileID: 11400000, guid: 43141de436653c841adb525dd554d1fc, type: 2}

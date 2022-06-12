@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.ScriptableObjects {
-    [CreateAssetMenu (fileName = "Configuration/Game")]
+    [CreateAssetMenu (fileName = "Configuration/System")]
     public class GameConfiguration : ScriptableObject {
-        public CameraConfiguration cameraConfiguration;
-        public CanvasConfiguration canvasConfiguration;
+        public UIConfiguration uiConfig;
+        public PlayerConfiguration playerConfig;
     }
 }

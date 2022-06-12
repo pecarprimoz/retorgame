@@ -20,10 +20,10 @@ namespace Game.Systems.Init {
             ref var cameraComponent = ref cameraPool.Get(cameraEntity);
             ref var uiComponent = ref uiPool.Get(uiEntity);
             
-            var camera = Object.Instantiate (gameData.gameSystem.gameConfig.cameraConfiguration.assetReference);
+            var camera = Object.Instantiate (gameData.gameGame.uiConfig.cameraConfiguration.assetReference);
             cameraComponent.camera = camera;
             
-            uiComponent.UI = Object.Instantiate (gameData.gameSystem.gameConfig.canvasConfiguration.assetReference);
+            uiComponent.UI = Object.Instantiate (gameData.gameGame.uiConfig.canvasConfiguration.assetReference);
             uiComponent.camera = camera.GetComponent<Camera> ();
         }
     }

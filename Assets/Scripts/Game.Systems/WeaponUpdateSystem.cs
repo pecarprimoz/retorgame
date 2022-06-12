@@ -25,7 +25,7 @@ namespace Game.Systems {
                 }
 
                 if (weaponComponent.delayBetweenShots <= 0) {
-                    weaponComponent.delayBetweenShots = gameData.gameSystem.playerConfig.weaponConfiguration.fireRate;
+                    weaponComponent.delayBetweenShots = gameData.gameGame.playerConfig.weaponConfiguration.fireRate;
                     weaponComponent.canShoot = true;
                 }
                 

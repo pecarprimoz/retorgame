@@ -14,7 +14,7 @@ namespace Game.Systems.Init {
             var weaponEntity = ecsWorld.NewEntity ();
             var weaponPool = ecsWorld.GetPool<WeaponComponent> ();
             weaponPool.Add (weaponEntity);
-            var weapon = Object.Instantiate (gameData.gameSystem.playerConfig.weaponConfiguration.weaponReference);
+            var weapon = Object.Instantiate (gameData.gameGame.playerConfig.weaponConfiguration.weaponReference);
             ref var weaponComponent = ref weaponPool.Get (weaponEntity);
             weaponComponent.trs = weapon.transform;
 
@@ -31,7 +31,7 @@ namespace Game.Systems.Init {
                 syncTRS.attach = playerComponent.trs;
                 syncTRS.origin = weaponComponent.trs;
                 ref var offsetComponent = ref offsetPool.Get (weaponEntity);
-                offsetComponent.offset = gameData.gameSystem.playerConfig.weaponConfiguration.offset;
+                offsetComponent.offset = gameData.gameGame.playerConfig.weaponConfiguration.offset;
             }
 
             var spriteDirectionPool = ecsWorld.GetPool<SpriteDirectionComponent> ();

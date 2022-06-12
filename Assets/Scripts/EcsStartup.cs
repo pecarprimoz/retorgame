@@ -14,15 +14,14 @@ sealed class EcsStartup : MonoBehaviour {
     private EcsSystems fixedUpdateSystems;
 
     [Header ("SO References")] [SerializeField]
-    private SystemConfiguration gameConfig;
+    private GameConfiguration gameConfig;
 
     void Start () {
         ecsWorld = new EcsWorld ();
         var gameData = new GameData
         {
-            gameSystem = gameConfig,
+            gameGame = gameConfig,
             sceneService = new SceneService (),
-            runetimeData = new RuntimeData (),
         };
 
         initSystems = new EcsSystems (ecsWorld, gameData)

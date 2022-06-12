@@ -23,7 +23,7 @@ namespace Game.Systems {
             var offsetPool = ecsSystems.GetWorld ().GetPool<OffsetComponent> ();
             var gameData = ecsSystems.GetShared<GameData>();
             var projectileLifetime =
-                gameData.gameSystem.playerConfig.weaponConfiguration.projectileConfiguration.lifetime;
+                gameData.gameGame.playerConfig.weaponConfiguration.projectileConfiguration.lifetime;
             foreach (var projectileEntity in projectileFilter) {
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
                 if (projectileComponent.trs.gameObject.activeInHierarchy) {
