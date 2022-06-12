@@ -28,7 +28,8 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new InitGameSystem ())
             .Add (new InitPlayerSystem ())
             .Add (new InitWeaponSystem ())
-            .Add (new InitProjectileSystem ());
+            .Add (new InitProjectileSystem ())
+            .Add (new InitEnemySystem ());
 
         initSystems.Init ();
 
@@ -36,7 +37,8 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerInputSystem ())
             .Add (new PlayerAnimationSystem ())
             .Add (new CameraSyncSystem ())
-            .Add (new WeaponUpdateSystem ())
+            .Add (new PlayerWeaponUpdateSystem ())
+            .Add (new PlayerShootingSystem ())
             .Add (new ProjectileSystem ())
             .Add (new SpriteDirectionSystem ())
             .Add (new SyncTransformSystem())

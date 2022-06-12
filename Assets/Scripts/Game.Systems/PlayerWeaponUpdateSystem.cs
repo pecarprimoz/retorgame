@@ -8,11 +8,10 @@ using Game.Data;
 using UnityEngine;
 
 namespace Game.Systems {
-    public class WeaponUpdateSystem : IEcsRunSystem {
+    public class PlayerWeaponUpdateSystem : IEcsRunSystem {
         public void Run(EcsSystems ecsSystems) {
             var playerFilter = ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ();
             var weaponFilter = ecsSystems.GetWorld ().Filter<WeaponComponent> ().End ();
-            var playerPool = ecsSystems.GetWorld ().GetPool<PlayerComponent> ();
             var playerInputPool = ecsSystems.GetWorld ().GetPool<PlayerInputComponent> ();
             var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
             var crosshairPool = ecsSystems.GetWorld ().GetPool<CrosshairComponent> ();
@@ -41,7 +40,7 @@ namespace Game.Systems {
         private void PointWeaponToCrosshair(ref WeaponComponent weapon, ref CrosshairComponent crosshair, ref PlayerInputComponent input) {
             var direction = (crosshair.trs.position - weapon.trs.position).normalized;
             input.lookDirection = direction;
-            weapon.trs.position = Vector3.MoveTowards (weapon.trs.position, crosshair.trs.position, Time.deltaTime * 5);
+            weapon.trs.position = Vector3.MoveTowards (weapon.trs.position, crosshair.trs.position, Time.deltaTime * 15);
             float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
             weapon.trs.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
         }
