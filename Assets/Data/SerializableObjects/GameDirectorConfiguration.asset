@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   enemySpawnConfiguration: {fileID: 11400000, guid: a8f91efd2b9ddc64e901d3c05271abc8, type: 2}
-  spawnCount: 5
+  spawnCount: 1

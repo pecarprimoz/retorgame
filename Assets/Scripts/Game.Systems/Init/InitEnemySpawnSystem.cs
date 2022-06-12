@@ -23,8 +23,8 @@ namespace Game.Systems.Init {
                     var enemySpawnEntity = ecsWorld.NewEntity ();
                     enemySpawnPool.Add (enemySpawnEntity);
                     ref var enemySpawnComponent = ref enemySpawnPool.Get (enemySpawnEntity);
-                    enemySpawnComponent.min = gameDirectionConfig.spawnCount;
-                    enemySpawnComponent.max = gameDirectionConfig.spawnCount + 5; // change in future
+                    enemySpawnComponent.min = gameDirectionConfig.enemySpawnConfiguration.minInstanceCount;
+                    enemySpawnComponent.max = gameDirectionConfig.enemySpawnConfiguration.maxInstanceCount + 5; // change in future
                     enemySpawnComponent.spawnInterval =
                         enemySpawnConfiguration.spawnDelay;
                     enemySpawnComponent.position = Vector3.left;
