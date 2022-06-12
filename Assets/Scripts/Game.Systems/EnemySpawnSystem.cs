@@ -15,6 +15,7 @@ namespace Game.Systems {
             foreach (var spawnEntity in enemySpawnFilter) {
                 ref var spawnComponent = ref spawnPool.Get (spawnEntity);
                 if (spawnComponent.spawnInterval <= 0) {
+                    spawnComponent.active = false;
                     spawnComponent.spawnInterval =
                         gameData.gameConfig.gameDirectorConfig.enemySpawnConfiguration.spawnDelay;
                 }
@@ -23,8 +24,10 @@ namespace Game.Systems {
                     // enemy spawn 
                     foreach (var enemyEntity in enemyFilter) {
                         ref var enemyComponent = ref enemyPool.Get (enemyEntity);
-                        enemyComponent.trs.position = spawnComponent.position;
-                        enemyComponent.trs.gameObject.SetActive (true);
+                        if (!enemyComponent.trs.transform.gameObject.activeInHierarchy) {
+                            enemyComponent.trs.position = spawnComponent.position;
+                            enemyComponent.trs.gameObject.SetActive (true);
+                        }
                     }
                     spawnComponent.active = true;
                 }
