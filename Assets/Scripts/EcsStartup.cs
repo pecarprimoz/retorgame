@@ -37,10 +37,10 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerInputSystem ())
             .Add (new PlayerAnimationSystem ())
             .Add (new CameraSyncSystem ())
-            .Add (new SyncTransformSystem())
             .Add (new WeaponUpdateSystem ())
             .Add (new ProjectileSystem ())
             .Add (new SpriteDirectionSystem ())
+            .Add (new SyncTransformSystem())
 
 #if UNITY_EDITOR
             .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ());
