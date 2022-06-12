@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Data {
     public class GameData {
-        public GameConfiguration gameGame;
+        public GameConfiguration gameConfig;
         public SceneService sceneService;
     }
 }

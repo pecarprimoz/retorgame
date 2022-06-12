@@ -37,10 +37,10 @@ namespace Game.Systems {
                                 weaponComponent.canShoot = false;
                                 projectileComponent.body.AddForce (playerInputComponent.lookDirection *
                                                                    projectileComponent.speed); // set projectile speed
+                                return;
                             }
                         }
                     }
-                    break;
                 }
             }
         }

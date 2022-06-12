@@ -9,6 +9,7 @@ namespace Game.Systems.Init {
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();
+            
         }
     }
 }

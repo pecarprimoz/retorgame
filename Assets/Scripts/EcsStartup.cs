@@ -20,7 +20,7 @@ sealed class EcsStartup : MonoBehaviour {
         ecsWorld = new EcsWorld ();
         var gameData = new GameData
         {
-            gameGame = gameConfig,
+            gameConfig = gameConfig,
             sceneService = new SceneService (),
         };
 
@@ -29,6 +29,7 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new InitPlayerSystem ())
             .Add (new InitWeaponSystem ())
             .Add (new InitProjectileSystem ())
+            .Add (new InitEnemySpawnSystem ())
             .Add (new InitEnemySystem ());
 
         initSystems.Init ();
@@ -40,6 +41,7 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerWeaponUpdateSystem ())
             .Add (new PlayerShootingSystem ())
             .Add (new ProjectileSystem ())
+            .Add (new EnemySpawnSystem ())
             .Add (new SpriteDirectionSystem ())
             .Add (new SyncTransformSystem())
 

@@ -16,7 +16,7 @@ namespace Game.Systems.Init {
             // create projectiles
             for (int i = 0; i < projectileCount; i++) {
                 var projectileEntity = ecsWorld.NewEntity();
-                var projectile = Object.Instantiate (gameData.gameGame.playerConfig.weaponConfiguration
+                var projectile = Object.Instantiate (gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.projectileReference);
                 var projectilePool = ecsWorld.GetPool<ProjectileComponent> ();
                 var offsetPool = ecsWorld.GetPool<OffsetComponent> ();
@@ -29,14 +29,14 @@ namespace Game.Systems.Init {
                 ref var offsetComponent = ref offsetPool.Get (projectileEntity);
                 projectileComponent.body = projectile.GetComponent<Rigidbody2D> ();
                 projectileComponent.trs = projectile.transform;
-                projectileComponent.lifetime = gameData.gameGame.playerConfig.weaponConfiguration
+                projectileComponent.lifetime = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.lifetime;
-                projectileComponent.speed = gameData.gameGame.playerConfig.weaponConfiguration
+                projectileComponent.speed = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.speed;
-                projectileComponent.damage = gameData.gameGame.playerConfig.weaponConfiguration
+                projectileComponent.damage = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.damage;
                 
-                offsetComponent.offset = gameData.gameGame.playerConfig.weaponConfiguration
+                offsetComponent.offset = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.offset;
                 projectileComponent.trs.gameObject.SetActive (false);
             }

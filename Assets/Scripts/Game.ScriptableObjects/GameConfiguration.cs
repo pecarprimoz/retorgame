@@ -7,5 +7,6 @@ namespace Game.ScriptableObjects {
     public class GameConfiguration : ScriptableObject {
         public UIConfiguration uiConfig;
         public PlayerConfiguration playerConfig;
+        public GameDirectorConfiguration gameDirectorConfig;
     }
 }

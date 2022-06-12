@@ -20,11 +20,17 @@ namespace Game.Systems.Init {
             ref var cameraComponent = ref cameraPool.Get(cameraEntity);
             ref var uiComponent = ref uiPool.Get(uiEntity);
             
-            var camera = Object.Instantiate (gameData.gameGame.uiConfig.cameraConfiguration.assetReference);
+            var camera = Object.Instantiate (gameData.gameConfig.uiConfig.cameraConfiguration.assetReference);
             cameraComponent.camera = camera;
             
-            uiComponent.UI = Object.Instantiate (gameData.gameGame.uiConfig.canvasConfiguration.assetReference);
+            uiComponent.UI = Object.Instantiate (gameData.gameConfig.uiConfig.canvasConfiguration.assetReference);
             uiComponent.camera = camera.GetComponent<Camera> ();
+
+            var gameDirectorEntity = ecsWorld.NewEntity ();
+            var gameDirectorPool = ecsWorld.GetPool<GameDirectorComponent> ();
+            gameDirectorPool.Add (gameDirectorEntity);
+            ref var gameDirComp = ref gameDirectorPool.Get (gameDirectorEntity);
+            gameDirComp.spawnCount = gameData.gameConfig.gameDirectorConfig.spawnCount;
         }
     }
 }
