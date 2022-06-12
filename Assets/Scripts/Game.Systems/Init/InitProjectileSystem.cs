@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Game.Systems.Init {
     public class InitProjectileSystem : IEcsInitSystem {
 
-        private const int projectileCount = 9999;
+        private const int projectileCount = 100;
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();
@@ -19,9 +19,14 @@ namespace Game.Systems.Init {
                 var projectile = Object.Instantiate (gameData.gameSystem.playerConfig.weaponConfiguration
                     .projectileConfiguration.projectileReference);
                 var projectilePool = ecsWorld.GetPool<ProjectileComponent> ();
+                var offsetPool = ecsWorld.GetPool<OffsetComponent> ();
+                var spriteDirectionPool = ecsWorld.GetPool<SpriteDirectionComponent> ();
                 projectilePool.Add (projectileEntity);
-
+                offsetPool.Add (projectileEntity);
+                spriteDirectionPool.Add (projectileEntity);
+                
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
+                ref var offsetComponent = ref offsetPool.Get (projectileEntity);
                 projectileComponent.body = projectile.GetComponent<Rigidbody2D> ();
                 projectileComponent.trs = projectile.transform;
                 projectileComponent.lifetime = gameData.gameSystem.playerConfig.weaponConfiguration
@@ -30,6 +35,9 @@ namespace Game.Systems.Init {
                     .projectileConfiguration.speed;
                 projectileComponent.damage = gameData.gameSystem.playerConfig.weaponConfiguration
                     .projectileConfiguration.damage;
+                
+                offsetComponent.offset = gameData.gameSystem.playerConfig.weaponConfiguration
+                    .projectileConfiguration.offset;
                 projectileComponent.trs.gameObject.SetActive (false);
             }
             

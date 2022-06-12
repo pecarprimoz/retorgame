@@ -20,12 +20,16 @@ namespace Game.Systems {
             var weaponFilter = ecsSystems.GetWorld ().Filter<WeaponComponent> ().End ();
             var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
 
+            var offsetPool = ecsSystems.GetWorld ().GetPool<OffsetComponent> ();
+            var gameData = ecsSystems.GetShared<GameData>();
+            var projectileLifetime =
+                gameData.gameSystem.playerConfig.weaponConfiguration.projectileConfiguration.lifetime;
             foreach (var projectileEntity in projectileFilter) {
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
                 if (projectileComponent.trs.gameObject.activeInHierarchy) {
                     projectileComponent.lifetime -= Time.deltaTime;
                     if (projectileComponent.lifetime <= 0) {
-                        projectileComponent.lifetime = 5f;
+                        projectileComponent.lifetime = projectileLifetime;
                         projectileComponent.trs.gameObject.SetActive (false);
                     }
                 }
@@ -34,9 +38,9 @@ namespace Game.Systems {
                     ref var playerInputComponent = ref playerInputPool.Get (playerEntity);
                     foreach (var weaponEntity in weaponFilter) {
                         ref var weaponComponent = ref weaponPool.Get (weaponEntity);
-                        if (!projectileComponent.trs.gameObject.activeInHierarchy && playerInputComponent.mouse0 &&
-                            weaponComponent.canShoot) {
-                            projectileComponent.trs.position = weaponComponent.trs.position;
+                        if (weaponComponent.canShoot && playerInputComponent.mouse0 && !projectileComponent.trs.gameObject.activeInHierarchy) {
+                            var offsetComponent = offsetPool.Get (projectileEntity);
+                            projectileComponent.trs.position = weaponComponent.trs.position + offsetComponent.offset;
                             projectileComponent.trs.gameObject.SetActive (true);
                             weaponComponent.canShoot = false;
                             projectileComponent.body.AddForce (playerInputComponent.lookDirection *

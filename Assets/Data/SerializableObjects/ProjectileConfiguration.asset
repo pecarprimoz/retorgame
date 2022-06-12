@@ -40,4 +40,5 @@ MonoBehaviour:
     m_RotationOrder: 4
   speed: 50
   damage: 15
-  lifetime: 5
+  lifetime: 0.2
+  offset: {x: 0.41, y: 0.32, z: 0}

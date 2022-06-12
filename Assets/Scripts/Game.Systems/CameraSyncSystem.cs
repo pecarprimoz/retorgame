@@ -14,7 +14,6 @@ namespace Game.Systems {
             foreach (var cameraEntity in filterCamera) {
                 ref var camComponent = ref syncCamPool.Get (cameraEntity);
                 foreach (var playerEntity in filterPlayer) {
-                    if(!playerPool.Has (playerEntity)) continue;
                     ref var playerComponent = ref playerPool.Get (playerEntity);
                     var playerPosition = playerComponent.trs.position;
                     var playerInWorldPosition = new Vector3 (playerPosition.x, playerPosition.y,

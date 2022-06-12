@@ -11,5 +11,6 @@ namespace Game.ScriptableObjects {
         public float speed;
         public float damage;
         public float lifetime;
+        public Vector3 offset;
     }
 }
