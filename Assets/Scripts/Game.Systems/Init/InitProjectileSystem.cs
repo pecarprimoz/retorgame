@@ -19,14 +19,11 @@ namespace Game.Systems.Init {
                 var projectile = Object.Instantiate (gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.projectileReference);
                 var projectilePool = ecsWorld.GetPool<ProjectileComponent> ();
-                var offsetPool = ecsWorld.GetPool<OffsetComponent> ();
                 var spriteDirectionPool = ecsWorld.GetPool<SpriteDirectionComponent> ();
                 projectilePool.Add (projectileEntity);
-                offsetPool.Add (projectileEntity);
                 spriteDirectionPool.Add (projectileEntity);
                 
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
-                ref var offsetComponent = ref offsetPool.Get (projectileEntity);
                 projectileComponent.body = projectile.GetComponent<Rigidbody2D> ();
                 projectileComponent.trs = projectile.transform;
                 projectileComponent.lifetime = gameData.gameConfig.playerConfig.weaponConfiguration
@@ -36,8 +33,9 @@ namespace Game.Systems.Init {
                 projectileComponent.damage = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.damage;
                 
-                offsetComponent.offset = gameData.gameConfig.playerConfig.weaponConfiguration
-                    .projectileConfiguration.offset;
+                // do this rather with a transform reference on weapon, from there then spawn the projectile
+                // offsetComponent.offset = gameData.gameConfig.playerConfig.weaponConfiguration
+                //     .projectileConfiguration.offset;
                 projectileComponent.trs.gameObject.SetActive (false);
             }
             

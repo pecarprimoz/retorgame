@@ -18,13 +18,11 @@ namespace Game.Systems {
             foreach (var _ in ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ()) {
                 ref var inputComponent = ref playerInputPool.Get (_);
                 bool left = inputComponent.lookDirection.x < 0;
-
+                bool up = inputComponent.lookDirection.y < 0.25f;
                 Debug.Log (inputComponent.lookDirection);
                 foreach (var spriteDirectionEntity in spriteDirection) {
-                    SetWeaponSpriteDirection (weaponFilter, weaponPool, offsetPool, spriteDirectionEntity, left);
+                    SetWeaponSpriteDirection (weaponFilter, weaponPool, offsetPool, spriteDirectionEntity, left, up);
                     SetPlayerSpriteDirection (playerPool, spriteDirectionEntity, left);
-                    SetProjectileSpriteDirection (projectileFilter, projectilePool, offsetPool, spriteDirectionEntity,
-                        left);
                 }
             }
         }
@@ -44,49 +42,31 @@ namespace Game.Systems {
 
         private void SetWeaponSpriteDirection(EcsFilter weaponFilter,
             EcsPool<WeaponComponent> weaponPool, EcsPool<OffsetComponent> offsetPool, int spriteDirectionEntity,
-            bool left) {
+            bool left, bool up) {
             if (!weaponPool.Has (spriteDirectionEntity)) return;
             ref var weaponSync = ref weaponPool.Get (spriteDirectionEntity);
             foreach (var wepEntity in weaponFilter) {
                 ref var weaponOffsetComponent = ref offsetPool.Get (wepEntity);
+                var weaponSpriteRendererRef = weaponSync.trs.gameObject.GetComponent<SpriteRenderer> ();
                 if (left) {
-                    weaponSync.trs.gameObject.GetComponent<SpriteRenderer> ().flipY = true;
+                    weaponSpriteRendererRef.flipY = true;
                     weaponOffsetComponent.offset =
                         new Vector3 (-1 * Mathf.Abs (weaponOffsetComponent.offset.x),
                             weaponOffsetComponent.offset.y,
                             weaponOffsetComponent.offset.z);
                 }
                 else {
-                    weaponSync.trs.gameObject.GetComponent<SpriteRenderer> ().flipY = false;
+                    weaponSpriteRendererRef.flipY = false;
                     weaponOffsetComponent.offset =
                         new Vector3 (Mathf.Abs (weaponOffsetComponent.offset.x), weaponOffsetComponent.offset.y,
                             weaponOffsetComponent.offset.z);
                 }
-            }
-        }
 
-        // this is trash
-        private void SetProjectileSpriteDirection(EcsFilter projectileFilter,
-            EcsPool<ProjectileComponent> projectilePool,
-            EcsPool<OffsetComponent> offsetPool,
-            int spriteDirectionEntity, bool left) {
-            if (!projectilePool.Has (spriteDirectionEntity)) return;
-            foreach (var projectileEntity in projectileFilter) {
-                ref var projectileOffsetComponent = ref offsetPool.Get (projectileEntity);
-                ref var projectileComponent = ref projectilePool.Get (projectileEntity);
-                if (projectileComponent.trs.gameObject.activeInHierarchy) {
-                    if (left) {
-                        projectileOffsetComponent.offset =
-                            new Vector3 (-1 * Mathf.Abs (projectileOffsetComponent.offset.x),
-                                projectileOffsetComponent.offset.y,
-                                projectileOffsetComponent.offset.z);
-                    }
-                    else {
-                        projectileOffsetComponent.offset =
-                            new Vector3 (Mathf.Abs (projectileOffsetComponent.offset.x),
-                                projectileOffsetComponent.offset.y,
-                                projectileOffsetComponent.offset.z);
-                    }
+                if (up) {
+                    weaponSpriteRendererRef.sortingOrder = 2;
+                }
+                else {
+                    weaponSpriteRendererRef.sortingOrder = 0;
                 }
             }
         }

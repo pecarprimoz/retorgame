@@ -23,13 +23,13 @@ namespace Game.Systems {
                     weaponComponent.delayBetweenShots -= Time.deltaTime;
                 }
 
-                if (weaponComponent.delayBetweenShots <= 0) {
-                    weaponComponent.delayBetweenShots = gameData.gameConfig.playerConfig.weaponConfiguration.fireRate;
-                    weaponComponent.canShoot = true;
-                }
                 
                 foreach (var playerEntity in playerFilter) {
                     ref var playerInputComponent = ref playerInputPool.Get (playerEntity);
+                    if (weaponComponent.delayBetweenShots <= 0 && playerInputComponent.mouse0) {
+                        weaponComponent.delayBetweenShots = gameData.gameConfig.playerConfig.weaponConfiguration.fireRate;
+                        weaponComponent.canShoot = true;
+                    }
                     ref var crosshairComponent = ref crosshairPool.Get (playerEntity);
                     PointWeaponToCrosshair (ref weaponComponent, ref crosshairComponent, ref playerInputComponent);
                 }

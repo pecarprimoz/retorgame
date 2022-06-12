@@ -13,10 +13,7 @@ namespace Game.Systems {
                 ref var playerInputComponent = ref playerInputPool.Get (entity);
                 ref var playerComponent = ref playerComponentPool.Get (entity); 
                 var playerAnimator = playerComponent.trs.gameObject.GetComponent<Animator> ();
-                playerAnimator.SetBool ("Walking", playerInputComponent.IsMoving);
-                if (playerInputComponent.IsShooting) {
-                    playerAnimator.SetTrigger ("Shoot");
-                }
+                // playerAnimator.SetBool ("Walking", enemy.IsMoving);
             }
         }
     }

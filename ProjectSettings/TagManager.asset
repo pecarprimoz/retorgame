@@ -47,9 +47,6 @@ TagManager:
   - name: Projectile
     uniqueID: 1742843753
     locked: 0
-  - name: Player
+  - name: PlayerEntity
     uniqueID: 1783053057
-    locked: 0
-  - name: Weapon
-    uniqueID: 2319320525
     locked: 0
