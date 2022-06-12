@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4618913460740374591}
   - component: {fileID: 9013824696474908295}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy-BigBoss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

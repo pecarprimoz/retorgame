@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemySpawnConfiguration
   m_EditorClassIdentifier: 
   id: 0
-  enemyConfiguration: {fileID: 11400000, guid: db383e6db8d2be343a5e35dfd3b1c63f, type: 2}
+  enemyConfiguration: {fileID: 11400000, guid: 48005fa6bd1d22140aa3bb7f7e622722, type: 2}
   minInstanceCount: 1
   maxInstanceCount: 5
   spawnDelay: 1
