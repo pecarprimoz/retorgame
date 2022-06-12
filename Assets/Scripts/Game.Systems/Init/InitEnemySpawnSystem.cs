@@ -38,6 +38,7 @@ namespace Game.Systems.Init {
                         var enemy = Object.Instantiate (enemyConfiguration.enemyReference);
                         ref var enemyComponent = ref enemyPool.Get (enemyEntity);
                         enemyComponent.body = enemy.GetComponent<Rigidbody2D> ();
+                        enemyComponent.collider = enemy.GetComponent<Collider2D> ();
                         enemyComponent.hp = enemySpawnConfiguration.enemyConfiguration.hp;
                         enemyComponent.speed  = enemySpawnConfiguration.enemyConfiguration.speed;
                         enemyComponent.trs = enemy.transform;

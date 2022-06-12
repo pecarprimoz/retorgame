@@ -4,6 +4,7 @@ namespace Game.Components.Player {
     public struct ProjectileComponent {
         public int id;
         public Transform trs;
+        public Collider2D collider;
         public Rigidbody2D body;
         public AnimationCurve projectileCurve;
         public Vector3 direction;

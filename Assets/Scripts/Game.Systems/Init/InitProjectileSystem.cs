@@ -25,6 +25,7 @@ namespace Game.Systems.Init {
                 
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
                 projectileComponent.body = projectile.GetComponent<Rigidbody2D> ();
+                projectileComponent.collider = projectile.GetComponent<Collider2D> ();
                 projectileComponent.trs = projectile.transform;
                 projectileComponent.lifetime = gameData.gameConfig.playerConfig.weaponConfiguration
                     .projectileConfiguration.lifetime;

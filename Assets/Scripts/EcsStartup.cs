@@ -38,6 +38,7 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerInputSystem ())
             .Add (new PlayerAnimationSystem ())
             .Add (new CameraSyncSystem ())
+            .Add (new EnemyUpdateSystem ())
             .Add (new PlayerWeaponUpdateSystem ())
             .Add (new PlayerShootingSystem ())
             .Add (new ProjectileSystem ())
