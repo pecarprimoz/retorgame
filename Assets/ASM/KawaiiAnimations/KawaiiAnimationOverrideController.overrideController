@@ -9,5 +9,5 @@ AnimatorOverrideController:
   m_Name: KawaiiAnimationOverrideController
   m_Controller: {fileID: 9100000, guid: fc516f21f2fea634494d45d2e12a29fe, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 4987c818badd4a34f8831dd9f61d6b41, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: b6d1b01d2aae6d24988ca5ec2a1656b4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b6d1b01d2aae6d24988ca5ec2a1656b4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4975bc7a5db3aa74a9f2c61d102b24b3, type: 2}
