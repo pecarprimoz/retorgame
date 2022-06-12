@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ac6c90521c8514faea6a665854e57a, type: 3}
   m_Name: EnemyConfiguration
   m_EditorClassIdentifier: 
-  enemyReference: {fileID: 2236612293880467300, guid: 01ee56936f0b69642b1e308b23cc1272, type: 3}
+  enemyReference: {fileID: 2236612293880467300, guid: 493f5cd1f2c0b1e469e729fafdcc639a, type: 3}
   weaponConfiguration: {fileID: 11400000, guid: 0266cba15a5cf8244be63ad913e02c11, type: 2}
   speed: 2
   hp: 1
