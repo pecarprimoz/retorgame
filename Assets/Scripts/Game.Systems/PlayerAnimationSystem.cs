@@ -11,9 +11,12 @@ namespace Game.Systems {
 
             foreach (var entity in filter) {
                 ref var playerInputComponent = ref playerInputPool.Get (entity);
-                ref var playerComponent = ref playerComponentPool.Get (entity);
-                playerComponent.trs.gameObject.GetComponent<Animator> ()
-                    .SetBool ("Walking", playerInputComponent.IsMoving);
+                ref var playerComponent = ref playerComponentPool.Get (entity); 
+                var playerAnimator = playerComponent.trs.gameObject.GetComponent<Animator> ();
+                playerAnimator.SetBool ("Walking", playerInputComponent.IsMoving);
+                if (playerInputComponent.IsShooting) {
+                    playerAnimator.SetTrigger ("Shoot");
+                }
             }
         }
     }

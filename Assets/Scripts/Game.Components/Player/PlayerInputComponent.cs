@@ -11,5 +11,6 @@ namespace Game.Components.Player {
         public bool mouse0;
 
         public bool IsMoving => movementDirection.x != 0 || movementDirection.y != 0;
+        public bool IsShooting => mouse0;
     }
 }

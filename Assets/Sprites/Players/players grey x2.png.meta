@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff84c3d64191e274a8ea678929b526e4
+guid: 6f148922f2122464992c5d11a262a7a3
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6694585987811848588
-    second: playerIdle0
+    second: players grey x2_0
   - first:
       213: 6418785923454782595
     second: players grey x2_1
@@ -37,16 +37,16 @@ TextureImporter:
     second: players grey x2_10
   - first:
       213: -6430627668892925758
-    second: playerRun0
+    second: players grey x2_11
   - first:
       213: 7741480913191368206
-    second: playerRun1
+    second: players grey x2_12
   - first:
       213: 2689598738260964684
-    second: playerRun2
+    second: players grey x2_13
   - first:
       213: 2837656329488248426
-    second: playerRun3
+    second: players grey x2_14
   - first:
       213: 3708995227197700660
     second: players grey x2_15
@@ -176,6 +176,174 @@ TextureImporter:
   - first:
       213: 8067682732574785874
     second: players grey x2_57
+  - first:
+      213: 6025322163978872474
+    second: players grey x2_58
+  - first:
+      213: 5914541674602573658
+    second: players grey x2_59
+  - first:
+      213: -7706847155374425388
+    second: players grey x2_60
+  - first:
+      213: 3636565260509225064
+    second: players grey x2_61
+  - first:
+      213: 5777262485963635940
+    second: players grey x2_62
+  - first:
+      213: -8295797980813015530
+    second: players grey x2_63
+  - first:
+      213: 8001817875202116636
+    second: players grey x2_64
+  - first:
+      213: -6313892868909921853
+    second: players grey x2_65
+  - first:
+      213: 5220078303441889217
+    second: players grey x2_66
+  - first:
+      213: 4111314807436663484
+    second: players grey x2_67
+  - first:
+      213: -1076787611426161925
+    second: players grey x2_68
+  - first:
+      213: 5620980301425254160
+    second: players grey x2_69
+  - first:
+      213: 8125890336984635298
+    second: players grey x2_70
+  - first:
+      213: 7837900243088862520
+    second: players grey x2_71
+  - first:
+      213: 5027090178850471999
+    second: players grey x2_72
+  - first:
+      213: -259071492035984778
+    second: players grey x2_73
+  - first:
+      213: -6985655066393186482
+    second: players grey x2_74
+  - first:
+      213: -963022484660829314
+    second: players grey x2_75
+  - first:
+      213: -6506858919552470517
+    second: players grey x2_76
+  - first:
+      213: -8347902043690092056
+    second: players grey x2_77
+  - first:
+      213: 1026022510913606874
+    second: players grey x2_78
+  - first:
+      213: 1502609829798976945
+    second: players grey x2_79
+  - first:
+      213: -2591849992327598007
+    second: players grey x2_80
+  - first:
+      213: 2670403667491684889
+    second: players grey x2_81
+  - first:
+      213: -6404544364202239309
+    second: players grey x2_82
+  - first:
+      213: 3753715493386046234
+    second: players grey x2_83
+  - first:
+      213: -8859241427070625434
+    second: players grey x2_84
+  - first:
+      213: -4252126319050660533
+    second: players grey x2_85
+  - first:
+      213: 1878137415080490653
+    second: players grey x2_86
+  - first:
+      213: 395155580741755223
+    second: players grey x2_87
+  - first:
+      213: 2816420157239898596
+    second: players grey x2_88
+  - first:
+      213: 515636267509458677
+    second: players grey x2_89
+  - first:
+      213: 1762772938018934571
+    second: players grey x2_90
+  - first:
+      213: -6700724188112589558
+    second: players grey x2_91
+  - first:
+      213: -2516437239097447870
+    second: players grey x2_92
+  - first:
+      213: 7600586141650663626
+    second: players grey x2_93
+  - first:
+      213: -3114818658486392720
+    second: players grey x2_94
+  - first:
+      213: -8694910965808542589
+    second: players grey x2_95
+  - first:
+      213: 2022978642545128733
+    second: players grey x2_96
+  - first:
+      213: -222221624492522714
+    second: players grey x2_97
+  - first:
+      213: -5578365502671931561
+    second: players grey x2_98
+  - first:
+      213: -8557732206653285795
+    second: players grey x2_99
+  - first:
+      213: 9029965043260437756
+    second: players grey x2_100
+  - first:
+      213: -7004062208397801090
+    second: players grey x2_101
+  - first:
+      213: -9161508470579009283
+    second: players grey x2_102
+  - first:
+      213: 1530509469916005069
+    second: players grey x2_103
+  - first:
+      213: 3543144510430361618
+    second: players grey x2_104
+  - first:
+      213: 7556780228906781900
+    second: players grey x2_105
+  - first:
+      213: 5300873917983509832
+    second: players grey x2_106
+  - first:
+      213: 41769618016742886
+    second: players grey x2_107
+  - first:
+      213: -2811820775187289570
+    second: players grey x2_108
+  - first:
+      213: -6599695250887626197
+    second: players grey x2_109
+  - first:
+      213: -1956871173070732762
+    second: players grey x2_110
+  - first:
+      213: 292184362336172066
+    second: players grey x2_111
+  - first:
+      213: -5020649545245585267
+    second: players grey x2_112
+  - first:
+      213: 1013534544662136360
+    second: players grey x2_113
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -289,7 +457,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerIdle0
+      name: players grey x2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -520,7 +688,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerRun0
+      name: players grey x2_11
       rect:
         serializedVersion: 2
         x: 0
@@ -541,7 +709,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerRun1
+      name: players grey x2_12
       rect:
         serializedVersion: 2
         x: 64
@@ -562,7 +730,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerRun2
+      name: players grey x2_13
       rect:
         serializedVersion: 2
         x: 128
@@ -583,7 +751,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerRun3
+      name: players grey x2_14
       rect:
         serializedVersion: 2
         x: 192
