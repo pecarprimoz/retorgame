@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Game.ScriptableObjects.Catalogs;
+using Game.ScriptableObjects.Catalogs.ItemCatalog;
 using UnityEngine;
 
 namespace Game.ScriptableObjects {
@@ -8,5 +10,6 @@ namespace Game.ScriptableObjects {
         public UIConfiguration uiConfig;
         public PlayerConfiguration playerConfig;
         public GameDirectorConfiguration gameDirectorConfig;
+        public Catalog<ItemCatalogEntry> itemCatalog;
     }
 }

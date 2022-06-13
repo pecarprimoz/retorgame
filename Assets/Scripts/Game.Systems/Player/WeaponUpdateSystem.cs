@@ -8,7 +8,7 @@ using Game.Data;
 using UnityEngine;
 
 namespace Game.Systems {
-    public class PlayerWeaponUpdateSystem : IEcsRunSystem {
+    public class WeaponUpdateSystem : IEcsRunSystem {
         public void Run(EcsSystems ecsSystems) {
             var playerFilter = ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ();
             var weaponFilter = ecsSystems.GetWorld ().Filter<WeaponComponent> ().End ();

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Game.ScriptableObjects.Catalogs.WeaponCatalog;
 using UnityEngine;
 
 namespace Game.ScriptableObjects {

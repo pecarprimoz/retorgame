@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.ScriptableObjects.Catalogs.EnemyCatalog;
+using UnityEngine;
 
 namespace Game.ScriptableObjects {
     [CreateAssetMenu (fileName = "Configuration/EnemySpawn")]

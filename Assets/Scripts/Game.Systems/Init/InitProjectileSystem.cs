@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Game.Systems.Init {
     public class InitProjectileSystem : IEcsInitSystem {
 
-        private const int projectileCount = 100;
+        private const int projectileCount = 1000;
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();

@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Game.ScriptableObjects.Catalogs.WeaponCatalog; // is  this bad
+using UnityEngine;
 
-namespace Game.ScriptableObjects {
+namespace Game.ScriptableObjects.Catalogs.EnemyCatalog {
     [CreateAssetMenu (fileName = "Configuration/Enemy")]
-    public class EnemyConfiguration : ScriptableObject {
+    public class EnemyConfiguration : CatalogEntry {
         public GameObject enemyReference;
         public WeaponConfiguration weaponConfiguration;
         public float speed;

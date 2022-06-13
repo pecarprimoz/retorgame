@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Game.ScriptableObjects {
+namespace Game.ScriptableObjects.Catalogs.EnemyCatalog {
     [CreateAssetMenu (fileName = "Configuration/EnemySpawn")]
-    public class EnemySpawnConfiguration : ScriptableObject {
-        public int id;
+    public class EnemySpawnConfiguration : CatalogEntry {
         private bool active;
         public EnemyConfiguration enemyConfiguration;
         public int minInstanceCount;

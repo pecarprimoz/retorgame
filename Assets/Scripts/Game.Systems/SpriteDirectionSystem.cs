@@ -13,13 +13,11 @@ namespace Game.Systems {
             var playerInputPool = ecsSystems.GetWorld ().GetPool<PlayerInputComponent> ();
             var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
             var offsetPool = ecsSystems.GetWorld ().GetPool<OffsetComponent> ();
-            var projectilePool = ecsSystems.GetWorld ().GetPool<ProjectileComponent> ();
 
             foreach (var _ in ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ()) {
                 ref var inputComponent = ref playerInputPool.Get (_);
                 bool left = inputComponent.lookDirection.x < 0;
                 bool up = inputComponent.lookDirection.y < 0.25f;
-                Debug.Log (inputComponent.lookDirection);
                 foreach (var spriteDirectionEntity in spriteDirection) {
                     SetWeaponSpriteDirection (weaponFilter, weaponPool, offsetPool, spriteDirectionEntity, left, up);
                     SetPlayerSpriteDirection (playerPool, spriteDirectionEntity, left);

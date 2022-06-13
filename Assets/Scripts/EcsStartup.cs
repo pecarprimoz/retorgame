@@ -30,7 +30,8 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new InitWeaponSystem ())
             .Add (new InitProjectileSystem ())
             .Add (new InitEnemySpawnSystem ())
-            .Add (new InitEnemySystem ());
+            .Add (new InitEnemySystem ())
+            .Add (new InitItemSystem ());
 
         initSystems.Init ();
 
@@ -39,12 +40,13 @@ sealed class EcsStartup : MonoBehaviour {
             .Add (new PlayerAnimationSystem ())
             .Add (new CameraSyncSystem ())
             .Add (new EnemyUpdateSystem ())
-            .Add (new PlayerWeaponUpdateSystem ())
+            .Add (new WeaponUpdateSystem ())
             .Add (new PlayerShootingSystem ())
             .Add (new ProjectileSystem ())
             .Add (new EnemySpawnSystem ())
+            .Add (new ItemPickupSystem ())
             .Add (new SpriteDirectionSystem ())
-            .Add (new SyncTransformSystem())
+            .Add (new SyncTransformSystem ())
 
 #if UNITY_EDITOR
             .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ());

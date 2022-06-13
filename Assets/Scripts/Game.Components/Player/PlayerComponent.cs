@@ -6,5 +6,6 @@ namespace Game.Components.Player {
         public float speed;
         public Transform trs;
         public Rigidbody2D body;
+        public Collider2D collider;
     }
 }

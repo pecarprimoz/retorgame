@@ -26,6 +26,7 @@ namespace Game.Systems.Init {
             playerComponent.trs = player.transform;
             playerComponent.speed = gameData.gameConfig.playerConfig.playerSpeed;
             playerComponent.body = player.GetComponent<Rigidbody2D> ();
+            playerComponent.collider = player.GetComponent<Collider2D> ();
             
             // crosshair here because we are tied to the player entity due to input, decouple TODO
             var crosshairPool = ecsWorld.GetPool<CrosshairComponent> ();

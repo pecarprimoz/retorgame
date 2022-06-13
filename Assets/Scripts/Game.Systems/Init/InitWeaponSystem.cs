@@ -17,6 +17,7 @@ namespace Game.Systems.Init {
             var weapon = Object.Instantiate (gameData.gameConfig.playerConfig.weaponConfiguration.weaponReference);
             ref var weaponComponent = ref weaponPool.Get (weaponEntity);
             weaponComponent.trs = weapon.transform;
+            weaponComponent.projectileSpawnCount = gameData.gameConfig.playerConfig.weaponConfiguration.spawnedProjCount;
 
             var syncTRSPool = ecsWorld.GetPool<SyncTransformComponent> ();
             syncTRSPool.Add (weaponEntity);

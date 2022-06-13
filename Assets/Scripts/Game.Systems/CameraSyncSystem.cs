@@ -10,14 +10,11 @@ namespace Game.Systems {
             var filterPlayer = ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ();
             var syncCamPool = ecsSystems.GetWorld ().GetPool<CameraComponent> ();
             var playerPool = ecsSystems.GetWorld ().GetPool<PlayerComponent> ();
-            var crosshairPool = ecsSystems.GetWorld ().GetPool<CrosshairComponent> ();
 
             foreach (var cameraEntity in filterCamera) {
                 ref var camComponent = ref syncCamPool.Get (cameraEntity);
                 foreach (var playerEntity in filterPlayer) {
                     ref var playerComponent = ref playerPool.Get (playerEntity);
-                    ref var playerCrosshairComponent = ref crosshairPool.Get (playerEntity);
-                    var crosshairPosition = playerCrosshairComponent.trs.position;
                     var playerPosition = playerComponent.trs.position;
                     var playerInWorldPosition = new Vector3 (playerPosition.x, playerPosition.y,
                         camComponent.camera.transform.position.z);

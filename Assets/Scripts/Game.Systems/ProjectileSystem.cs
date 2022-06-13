@@ -21,9 +21,11 @@ namespace Game.Systems {
             var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
 
             var offsetPool = ecsSystems.GetWorld ().GetPool<OffsetComponent> ();
-            var gameData = ecsSystems.GetShared<GameData>();
+            var gameData = ecsSystems.GetShared<GameData> ();
             var projectileLifetime =
                 gameData.gameConfig.playerConfig.weaponConfiguration.projectileConfiguration.lifetime;
+
+            // handle projectile lifetime 
             foreach (var projectileEntity in projectileFilter) {
                 ref var projectileComponent = ref projectilePool.Get (projectileEntity);
                 if (projectileComponent.trs.gameObject.activeInHierarchy) {
@@ -33,22 +35,34 @@ namespace Game.Systems {
                         projectileComponent.trs.gameObject.SetActive (false);
                     }
                 }
+            }
 
-                foreach (var playerEntity in playerFilter) {
-                    ref var playerInputComponent = ref playerInputPool.Get (playerEntity);
-                    ref var playerComponent = ref playerPool.Get (playerEntity);
-                    foreach (var weaponEntity in weaponFilter) {
-                        ref var weaponComponent = ref weaponPool.Get (weaponEntity);
-                        if (weaponComponent.canShoot && playerInputComponent.mouse0 && !projectileComponent.trs.gameObject.activeInHierarchy) {
-                            var offsetComponent = offsetPool.Get (projectileEntity);
+            foreach (var weaponEntity in weaponFilter) {
+                ref var weaponComponent = ref weaponPool.Get (weaponEntity);
+                int spawnedProjectileCount = 0;
+                float yOffset = 0f;
+                foreach (var projectileEntity in projectileFilter) {
+                    if (spawnedProjectileCount >= weaponComponent.projectileSpawnCount) {
+                        weaponComponent.canShoot = false;
+                        break;
+                    }
+
+                    foreach (var playerEntity in playerFilter) {
+                        ref var playerInput = ref playerInputPool.Get (playerEntity);
+                        ref var projectileComponent = ref projectilePool.Get (projectileEntity);
+                        if (!projectileComponent.trs.gameObject.activeInHierarchy && playerInput.mouse0 &&
+                            weaponComponent.canShoot) {
+                            var offsetComponent = offsetPool.Get (weaponEntity);
                             projectileComponent.trs.position = weaponComponent.trs.position + offsetComponent.offset;
                             projectileComponent.trs.gameObject.SetActive (true);
-                            playerComponent.trs.gameObject.GetComponent<Animator> ().SetTrigger ("Shoot");
-                            weaponComponent.canShoot = false;
-                            projectileComponent.body.AddForce (playerInputComponent.lookDirection *
+                            projectileComponent.body.AddForce ((playerInput.lookDirection + new Vector3 (0, yOffset, 0)) *
                                                                projectileComponent.speed); // set projectile speed
+                            Debug.Log ($"Spawn projectile count {spawnedProjectileCount}");
+                            spawnedProjectileCount++;
                         }
                     }
+
+                    yOffset += 0.03f;
                 }
             }
         }

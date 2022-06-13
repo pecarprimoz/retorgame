@@ -15,3 +15,4 @@ MonoBehaviour:
   uiConfig: {fileID: 11400000, guid: 456031b1799ffbd41bf6b2e09569ba57, type: 2}
   playerConfig: {fileID: 11400000, guid: f613552a12988d14c9f60ecc30712800, type: 2}
   gameDirectorConfig: {fileID: 11400000, guid: a3d3b5e9bf9ca614195dec96ce64f1e8, type: 2}
+  itemCatalog: {fileID: 11400000, guid: 3f9b03e9b3af5054da69b8b3474af79b, type: 2}
