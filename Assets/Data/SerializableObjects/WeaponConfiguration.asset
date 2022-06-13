@@ -17,4 +17,4 @@ MonoBehaviour:
   projectileConfiguration: {fileID: 11400000, guid: 3afff5ee7385b46419ed6224933a24e0, type: 2}
   offset: {x: 0, y: -0.15, z: 0}
   fireRate: 0.1
-  spawnedProjCount: 1000
+  spawnedProjCount: 1

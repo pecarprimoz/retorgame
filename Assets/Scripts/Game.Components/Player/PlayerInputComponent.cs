@@ -9,8 +9,8 @@ namespace Game.Components.Player {
         public Vector3 lookDirection;
 
         public bool mouse0;
+        public bool mouse1;
 
         public bool IsMoving => movementDirection.x != 0 || movementDirection.y != 0;
-        public bool IsShooting => mouse0;
     }
 }

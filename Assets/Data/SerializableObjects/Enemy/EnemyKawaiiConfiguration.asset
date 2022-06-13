@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ac6c90521c8514faea6a665854e57a, type: 3}
-  m_Name: EnemyConfiguration
+  m_Name: EnemyKawaiiConfiguration
   m_EditorClassIdentifier: 
-  enemyReference: {fileID: 2236612293880467300, guid: 493f5cd1f2c0b1e469e729fafdcc639a, type: 3}
+  id: 0
+  enemyReference: {fileID: 2236612293880467300, guid: 0e77063ece5fa564cb26dffe4788799c, type: 3}
   weaponConfiguration: {fileID: 11400000, guid: 0266cba15a5cf8244be63ad913e02c11, type: 2}
   speed: 2
   hp: 1

@@ -35,6 +35,11 @@ namespace Game.Systems {
                     playerComponent.body.Sleep();
                 }
 
+                if (playerInputComponent.mouse1) {
+                    playerComponent.body.AddForce(playerInputComponent.lookDirection * playerComponent.dashSpeed);
+                    playerComponent.particleSys.Play();
+                }
+
                 // handle crosshair logic&view
                 foreach (var _ in cameraFilter) {
                     ref var cameraComponent = ref cameraPool.Get (_);

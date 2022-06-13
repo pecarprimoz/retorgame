@@ -8,5 +8,6 @@ namespace Game.ScriptableObjects {
         public GameObject playerCrosshairReference;
         public WeaponConfiguration weaponConfiguration;
         public float playerSpeed;
+        public float dashSpeed;
     }
 }

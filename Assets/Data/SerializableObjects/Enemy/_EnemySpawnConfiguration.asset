@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56a2779de0914752a09e9f69decb5da4, type: 3}
-  m_Name: EnemySpawnConfiguration
+  m_Name: _EnemySpawnConfiguration
   m_EditorClassIdentifier: 
   id: 0
-  enemyConfiguration: {fileID: 11400000, guid: 48005fa6bd1d22140aa3bb7f7e622722, type: 2}
+  enemyConfiguration:
+  - {fileID: 11400000, guid: abe90852ac2f25c4380c39c650aa7e5b, type: 2}
+  - {fileID: 11400000, guid: db383e6db8d2be343a5e35dfd3b1c63f, type: 2}
+  - {fileID: 11400000, guid: 48005fa6bd1d22140aa3bb7f7e622722, type: 2}
+  - {fileID: 11400000, guid: 98cf983b179024c4ea52ff55e05de8b0, type: 2}
+  - {fileID: 11400000, guid: e0bcc128759af3e4384acad94fa94b7d, type: 2}
   minInstanceCount: 1
   maxInstanceCount: 1
   spawnDelay: 1

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac6c90521c8514faea6a665854e57a, type: 3}
+  m_Name: EnemyCursedConfiguration
+  m_EditorClassIdentifier: 
+  enemyReference: {fileID: 2236612293880467300, guid: 493f5cd1f2c0b1e469e729fafdcc639a, type: 3}
+  weaponConfiguration: {fileID: 11400000, guid: 0266cba15a5cf8244be63ad913e02c11, type: 2}
+  speed: 2
+  hp: 1

@@ -21,6 +21,7 @@ namespace Game.Systems
                 playerInputComponent.moveVertical = new Vector3(Input.GetAxisRaw("Vertical"), 0, 0);
                 playerInputComponent.mousePos = Input.mousePosition;
                 playerInputComponent.mouse0 = Input.GetMouseButton (0);
+                playerInputComponent.mouse1 = Input.GetMouseButton (1);
                 
                 var playerDirection =
                     new Vector2 (playerInputComponent.moveHorizontal.x, playerInputComponent.moveVertical.x);
