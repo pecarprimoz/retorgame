@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: taliban tom/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637905373368439653
+  lastModified: 637907619091503753
   FileSizes:
   - Name: Desktop
     Value: 5298240
@@ -71,7 +71,7 @@ MonoBehaviour:
   - {fileID: -8501615063243462765}
   StringsBanks:
   - {fileID: 2235754533530648369}
-  cacheTime: 637905373368449676
+  cacheTime: 637907619091513574
   cacheVersion: 131591
 --- !u!114 &2235754533530648369
 MonoBehaviour:
@@ -88,7 +88,7 @@ MonoBehaviour:
   Path: taliban tom/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637905373368449676
+  lastModified: 637907619091513574
   FileSizes:
   - Name: Desktop
     Value: 844
