@@ -50,3 +50,6 @@ TagManager:
   - name: PlayerEntity
     uniqueID: 1783053057
     locked: 0
+  - name: VFX
+    uniqueID: 3815186871
+    locked: 0
