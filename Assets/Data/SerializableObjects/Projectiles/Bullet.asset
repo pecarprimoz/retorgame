@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dda5661c33e8fe84a8930ecb74a03edc, type: 3}
-  m_Name: ProjectileConfiguration
+  m_Name: Bullet
   m_EditorClassIdentifier: 
   id: 0
-  projectileReference: {fileID: 6089607857566856458, guid: 3f63f5b896150a94e95ac29249c69ef0, type: 3}
+  projectileReference: {fileID: 2182963055552832715, guid: 3ad57904e4b50c04d97f6bf130fed369, type: 3}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speed: 50
+  speed: 15
   damage: 15
   lifetime: 0.2
   offset: {x: 0.41, y: 0.32, z: 0}
