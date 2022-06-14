@@ -36,7 +36,7 @@ namespace Game.Systems {
                 }
 
                 if (playerInputComponent.mouse1) {
-                    playerComponent.body.AddForce(playerInputComponent.lookDirection * playerComponent.dashSpeed);
+                    playerComponent.body.AddForce(playerInputComponent.lookDirection * playerComponent.dashSpeed,ForceMode2D.Impulse);
                     playerComponent.particleSys.Play();
                 }
 
