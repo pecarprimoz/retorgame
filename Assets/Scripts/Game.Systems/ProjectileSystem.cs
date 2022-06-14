@@ -10,8 +10,12 @@ using UnityEngine;
 namespace Game.Systems {
     public class ProjectileSystem : IEcsRunSystem {
         public void Run(EcsSystems ecsSystems) {
+            var gameData = ecsSystems.GetShared<GameData> ();
+            if (gameData.gameConfig.playerConfig.weaponConfiguration.projectileConfiguration == null) {
+                return;
+            }
+
             var playerFilter = ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ();
-            var playerPool = ecsSystems.GetWorld ().GetPool<PlayerComponent> ();
             var playerInputPool = ecsSystems.GetWorld ().GetPool<PlayerInputComponent> ();
 
             var projectileFilter = ecsSystems.GetWorld ().Filter<ProjectileComponent> ().End ();
@@ -21,7 +25,7 @@ namespace Game.Systems {
             var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
 
             var offsetPool = ecsSystems.GetWorld ().GetPool<OffsetComponent> ();
-            var gameData = ecsSystems.GetShared<GameData> ();
+            
             var projectileLifetime =
                 gameData.gameConfig.playerConfig.weaponConfiguration.projectileConfiguration.lifetime;
 

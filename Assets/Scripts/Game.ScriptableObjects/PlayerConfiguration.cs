@@ -9,5 +9,6 @@ namespace Game.ScriptableObjects {
         public WeaponConfiguration weaponConfiguration;
         public float playerSpeed;
         public float dashSpeed;
+        public float dashCooldown;
     }
 }

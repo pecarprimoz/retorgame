@@ -12,7 +12,11 @@ namespace Game.Systems.Init {
         public void Init(EcsSystems systems) {
             var ecsWorld = systems.GetWorld();
             var gameData = systems.GetShared<GameData>();
-            
+            if (gameData.gameConfig.playerConfig.weaponConfiguration
+                    .projectileConfiguration == null) {
+                return;
+            }
+
             // create projectiles
             for (int i = 0; i < projectileCount; i++) {
                 var projectileEntity = ecsWorld.NewEntity();

@@ -10,9 +10,11 @@ namespace Game.Systems {
             var enemyFilter = ecsSystems.GetWorld ().Filter<EnemyComponent> ().End ();
             var projectileFilter = ecsSystems.GetWorld ().Filter<ProjectileComponent> ().End ();
             var playerFilter = ecsSystems.GetWorld ().Filter<PlayerComponent> ().End ();
+            var weaponFilter = ecsSystems.GetWorld ().Filter<WeaponComponent> ().End ();
             var enemyPool = ecsSystems.GetWorld ().GetPool<EnemyComponent> ();
             var projectilePool = ecsSystems.GetWorld ().GetPool<ProjectileComponent> ();
             var playerPool = ecsSystems.GetWorld ().GetPool<PlayerComponent> ();
+            var weaponPool = ecsSystems.GetWorld ().GetPool<WeaponComponent> ();
             foreach (var enemyEntity in enemyFilter) {
                 ref var enemyComponent = ref enemyPool.Get (enemyEntity);
                 MoveEnemyToPlayer (ref enemyComponent, playerFilter, playerPool);
@@ -24,6 +26,13 @@ namespace Game.Systems {
                                 projectileComponent.trs.gameObject.SetActive (false);
                                 enemyComponent.trs.gameObject.SetActive (false);
                             }
+                        }
+                    }
+
+                    foreach (var weaponEntity in weaponFilter) {
+                        ref var weaponComponent = ref weaponPool.Get (weaponEntity);
+                        if (weaponComponent.collider.Distance (enemyComponent.collider).isOverlapped) {
+                            enemyComponent.trs.gameObject.SetActive (false);                            
                         }
                     }
                 }

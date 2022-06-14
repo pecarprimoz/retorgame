@@ -18,6 +18,7 @@ namespace Game.Systems.Init {
             ref var weaponComponent = ref weaponPool.Get (weaponEntity);
             weaponComponent.trs = weapon.transform;
             weaponComponent.projectileSpawnCount = gameData.gameConfig.playerConfig.weaponConfiguration.spawnedProjCount;
+            weaponComponent.collider = weapon.transform.GetComponent<Collider2D> ();
 
             var syncTRSPool = ecsWorld.GetPool<SyncTransformComponent> ();
             syncTRSPool.Add (weaponEntity);
